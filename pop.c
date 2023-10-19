@@ -4,7 +4,7 @@
  * @stack: is a pointer to stack
  * @line_number: is a line number
  */
-void pop (stack_t **stack, unsigned int line_number)
+void pop(stack_t **stack, unsigned int line_number)
 {
 	*stack = top_2.holder;
 

@@ -1,7 +1,7 @@
 #include"monty.h"
 /**
  * pint_int - print the element in the top of the stack
- * @new: is a pointer
+ * @stack: is a pointer
  * @line_number: is a the line number
  */
 void pint_int (stack_t **stack, unsigned int line_number)
