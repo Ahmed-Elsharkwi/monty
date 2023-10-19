@@ -48,9 +48,8 @@ char *opcode;
 void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 extern stack_p top_2;
-void _free_1();
+void _free_1(void);
 void push_int(stack_t **new, unsigned int line_number);
-void _exit_1();
-int check_space();
-void pall_int();
+int check_space(void);
+void pall_int(stack_t **new, unsigned int line_number);
 #endif

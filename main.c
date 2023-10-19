@@ -28,31 +28,23 @@ int main(int argc, char *argv[])
 	top_2.fp = fopen(argv[1], "r");
 	if (top_2.fp == NULL)
 	{
-		printf("Error: Can't open file %s", argv[1]);
+		printf("Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
 	while ((number = getline(&top_2.buffer, &n, top_2.fp)) != -1)
 	{
 		if (check_space() == 1)
-		{
-			printf("L%d: usage: push integer\n", line_number);
-			_free_1();
-			exit(EXIT_FAILURE);
-		}
-		arg[0] = strtok(top_2.buffer, " \n");
+			continue;
+		arg[0] = strtok(top_2.buffer, " \n\t");
 		i = 0;
 		while (arg[i] != NULL && i < 2)
 		{
 			i++;
 			arg[i] = strtok(NULL, " \n");
 		}
-		if (arg[2] != NULL && arg[1] != NULL)
-		{
-			printf("L%d: unknown instruction %s\n", line_number, arg[0]);
-			_free_1();
-			exit(EXIT_FAILURE);
-		}
-		if (strcmp(arg[0], (arr[0].opcode)) == 0)
+		if (arg[1] != NULL && arg[2] != NULL)
+			continue;
+		else if (strcmp(arg[0], (arr[0].opcode)) == 0)
 		{
 			if (arg[1] == NULL || is_number(arg[1]) == 0)
 			{
@@ -63,10 +55,16 @@ int main(int argc, char *argv[])
 			top_2.data = atoi(arg[1]);
 			arr[0].f(&top_2.top_1, line_number);
 		}
-		if (strcmp(arg[0], (arr[1].opcode)) == 0)
+		else if (strcmp(arg[0], (arr[1].opcode)) == 0)
 		{
 			p = top_2.top_1;
 			arr[1].f(&p, line_number);
+		}
+		else
+		{
+			printf("L%d: unknown instruction %s", line_number, arg[0]);
+			_free_1();
+			exit(EXIT_FAILURE);
 		}
 		line_number++;
 	}

@@ -2,10 +2,9 @@
 /**
  * check_space - it will check if the command is spaces
  * only without any letters
- * @array: that array is a pointer
  * Return: 1 if the string has no letters and only spaces
  */
-int check_space()
+int check_space(void)
 {
 	char *array = top_2.buffer;
 	unsigned int i;

@@ -2,7 +2,7 @@
 /**
  * _free_1 - free the stack
  */
-void _free_1()
+void _free_1(void)
 {
 	free(top_2.buffer);
 	if (top_2.top_1 != NULL)
