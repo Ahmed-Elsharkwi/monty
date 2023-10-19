@@ -9,10 +9,10 @@ int is_number(char *str);
 void get_the_func(char *arg_1, char *arg_2, int line_number)
 {
 	instruction_t arr[] = {
-                {"push", push_int},
-                {"pall", pall_int},
+		{"push", push_int},
+		{"pall", pall_int},
 		{NULL, NULL}
-        };
+	};
 	int i = 0;
 
 	while (arr[i].opcode != NULL)
@@ -26,10 +26,10 @@ void get_the_func(char *arg_1, char *arg_2, int line_number)
 					printf("L%d: usage: push integer\n", line_number);
 					_free_1();
 					exit(EXIT_FAILURE);
-                        	}
+				}
 				top_2.data = atoi(arg_2);
 			}
-			arr[i].f(&top_2.top_1, line_number);
+			arr[i].f(&top_2.print_pointer, line_number);
 			return;
 		}
 		i++;

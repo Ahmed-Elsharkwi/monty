@@ -33,8 +33,8 @@ typedef struct easy
 	int data;
 	FILE *fp;
 	char *buffer;
-	stack_t *top_1;
-	stack_t *p;
+	stack_t *print_pointer;
+	stack_t *holder;
 } stack_p;
 /**
 struct instruction_s - opcode and its function

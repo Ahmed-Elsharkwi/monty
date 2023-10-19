@@ -16,6 +16,7 @@ void push_int(stack_t **new, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 	temp->n = top_2.data;
+	*new = top_2.holder;
 	if (*new == NULL)
 	{
 		temp->next = NULL;
@@ -29,5 +30,5 @@ void push_int(stack_t **new, unsigned int line_number)
 		temp->prev = *new;
 		*new = temp;
 	}
-	top_2.p = *new;
+	top_2.holder = *new;
 }
