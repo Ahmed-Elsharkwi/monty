@@ -48,10 +48,13 @@ typedef struct instruction_s
 char *opcode;
 void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
+
 extern stack_p top_2;
-void _free_1(void);
+
 void push_int(stack_t **new, unsigned int line_number);
-int check_space(void);
 void pall_int(stack_t **new, unsigned int line_number);
+void pint_int(stack_t **stack, unsigned int line_number);
 void get_the_func(char *arg_1, char *arg_2, int line_numer);
+int check_space(void);
+void _free_1(void);
 #endif

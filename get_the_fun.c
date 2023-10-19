@@ -11,6 +11,7 @@ void get_the_func(char *arg_1, char *arg_2, int line_number)
 	instruction_t arr[] = {
 		{"push", push_int},
 		{"pall", pall_int},
+		{"pint", pint_int},
 		{NULL, NULL}
 	};
 	int i = 0;
@@ -23,7 +24,7 @@ void get_the_func(char *arg_1, char *arg_2, int line_number)
 			{
 				if (arg_2 == NULL || is_number(arg_2) == 0)
 				{
-					printf("L%d: usage: push integer\n", line_number);
+					fprintf(stderr, "L%d: usage: push integer\n", line_number);
 					_free_1();
 					exit(EXIT_FAILURE);
 				}

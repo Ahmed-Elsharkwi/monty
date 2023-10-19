@@ -8,6 +8,7 @@ void pall_int(stack_t **new, unsigned int line_number)
 {
 	(void) line_number;
 
+	*new = top_2.holder;
 	while (*new != NULL)
 	{
 		printf("%d\n", (*new)->n);
