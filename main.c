@@ -34,7 +34,10 @@ int main(int argc, char *argv[])
 	while ((number = getline(&top_2.buffer, &n, top_2.fp)) != -1)
 	{
 		if (check_space() == 1)
+		{
+			line_number++;
 			continue;
+		}
 		arg[0] = strtok(top_2.buffer, " \n\t");
 		i = 0;
 		while (arg[i] != NULL && i < 2)
@@ -43,7 +46,10 @@ int main(int argc, char *argv[])
 			arg[i] = strtok(NULL, " \n");
 		}
 		if (arg[1] != NULL && arg[2] != NULL)
+		{
+			line_number++;
 			continue;
+		}
 		else if (strcmp(arg[0], (arr[0].opcode)) == 0)
 		{
 			if (arg[1] == NULL || is_number(arg[1]) == 0)
@@ -62,7 +68,7 @@ int main(int argc, char *argv[])
 		}
 		else
 		{
-			printf("L%d: unknown instruction %s", line_number, arg[0]);
+			printf("L%d: unknown instruction %s\n", line_number, arg[0]);
 			_free_1();
 			exit(EXIT_FAILURE);
 		}
