@@ -34,6 +34,7 @@ typedef struct easy
 	FILE *fp;
 	char *buffer;
 	stack_t *top_1;
+	stack_t *p;
 } stack_p;
 /**
 struct instruction_s - opcode and its function
@@ -52,4 +53,5 @@ void _free_1(void);
 void push_int(stack_t **new, unsigned int line_number);
 int check_space(void);
 void pall_int(stack_t **new, unsigned int line_number);
+void get_the_func(char *arg_1, char *arg_2, int line_numer);
 #endif

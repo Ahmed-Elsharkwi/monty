@@ -29,4 +29,5 @@ void push_int(stack_t **new, unsigned int line_number)
 		temp->prev = *new;
 		*new = temp;
 	}
+	top_2.p = *new;
 }

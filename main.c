@@ -13,12 +13,7 @@ int main(int argc, char *argv[])
 	unsigned int line_number = 1;
 	char *arg[3];
 	size_t n = 0;
-	stack_t *p = NULL;
 	ssize_t number;
-	instruction_t arr[] = {
-		{"push", push_int},
-		{"pall", pall_int}
-	};
 
 	if (argc != 2)
 	{
@@ -50,46 +45,9 @@ int main(int argc, char *argv[])
 			line_number++;
 			continue;
 		}
-		else if (strcmp(arg[0], (arr[0].opcode)) == 0)
-		{
-			if (arg[1] == NULL || is_number(arg[1]) == 0)
-			{
-				printf("L%d: usage: push integer\n", line_number);
-				_free_1();
-				exit(EXIT_FAILURE);
-			}
-			top_2.data = atoi(arg[1]);
-			arr[0].f(&top_2.top_1, line_number);
-		}
-		else if (strcmp(arg[0], (arr[1].opcode)) == 0)
-		{
-			p = top_2.top_1;
-			arr[1].f(&p, line_number);
-		}
-		else
-		{
-			printf("L%d: unknown instruction %s\n", line_number, arg[0]);
-			_free_1();
-			exit(EXIT_FAILURE);
-		}
+		get_the_func(arg[0], arg[1], line_number);
 		line_number++;
 	}
 	_free_1();
 	return (0);
-}
-/**
- * is_number - check if the string is integer
- * @str: is a string
- * Return: 0 if the string is not integer otherwise 1
- */
-int is_number(char *str)
-{
-	unsigned long int i;
-
-	for (i = 0; i < strlen(str); i++)
-	{
-		if (!isdigit(str[i]))
-			return (0);
-	}
-	return (1);
 }

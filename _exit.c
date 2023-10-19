@@ -5,14 +5,14 @@
 void _free_1(void)
 {
 	free(top_2.buffer);
-	if (top_2.top_1 != NULL)
+	if (top_2.p != NULL)
 	{
-		while (top_2.top_1->prev != NULL)
+		while (top_2.p->prev != NULL)
 		{
-			top_2.top_1 = top_2.top_1->prev;
-			free(top_2.top_1->next);
+			top_2.p = top_2.p->prev;
+			free(top_2.p->next);
 		}
-		free(top_2.top_1);
+		free(top_2.p);
 	}
 	fclose(top_2.fp);
 }
