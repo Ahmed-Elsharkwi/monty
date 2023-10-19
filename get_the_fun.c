@@ -13,6 +13,8 @@ void get_the_func(char *arg_1, char *arg_2, int line_number)
 		{"pall", pall_int},
 		{"pint", pint_int},
 		{"pop", pop},
+		{"swap", swap},
+		{"add", add},
 		{NULL, NULL}
 	};
 	int i = 0;

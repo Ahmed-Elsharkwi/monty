@@ -55,6 +55,8 @@ void push_int(stack_t **new, unsigned int line_number);
 void pall_int(stack_t **new, unsigned int line_number);
 void pint_int(stack_t **stack, unsigned int line_number);
 void pop(stack_t **stack, unsigned int line_number);
+void swap(stack_t **stack, unsigned int line_nubmer);
+void add(stack_t **stack, unsigned int line_number);
 void get_the_func(char *arg_1, char *arg_2, int line_numer);
 int check_space(void);
 void _free_1(void);
