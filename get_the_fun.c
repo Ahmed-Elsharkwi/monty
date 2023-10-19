@@ -15,6 +15,7 @@ void get_the_func(char *arg_1, char *arg_2, int line_number)
 		{"pop", pop},
 		{"swap", swap},
 		{"add", add},
+		{"nop", nop},
 		{NULL, NULL}
 	};
 	int i = 0;
