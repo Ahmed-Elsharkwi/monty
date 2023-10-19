@@ -46,7 +46,7 @@ int main(int argc, char *argv[])
 			i++;
 			arg[i] = strtok(NULL, " \n");
 		}
-		if (arg[2] != NULL)
+		if (arg[2] != NULL && arg[1] != NULL)
 		{
 			printf("L%d: unknown instruction %s\n", line_number, arg[0]);
 			_free_1();
@@ -54,7 +54,7 @@ int main(int argc, char *argv[])
 		}
 		if (strcmp(arg[0], (arr[0].opcode)) == 0)
 		{
-			if (is_number(arg[1]) == 0 || arg[1] == NULL)
+			if (arg[1] == NULL || is_number(arg[1]) == 0)
 			{
 				printf("L%d: usage: push integer\n", line_number);
 				_free_1();
