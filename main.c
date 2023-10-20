@@ -43,8 +43,8 @@ int main(int argc, char *argv[])
 		if (arg[1] != NULL)
 		{
 			if (is_number(arg[1]) == 0)
-			       arg[1] = NULL;
-		}	
+				arg[1] = NULL;
+		}
 		get_the_func(arg[0], arg[1], line_number);
 		line_number++;
 	}
