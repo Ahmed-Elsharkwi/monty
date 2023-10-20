@@ -39,7 +39,7 @@ void get_the_func(char *arg_1, char *arg_2, int line_number)
 		}
 		i++;
 	}
-	printf("L%d: unknown instruction %s\n", line_number, arg_1);
+	fprintf(stderr, "L%d: unknown instruction %s\n", line_number, arg_1);
 	_free_1();
 	exit(EXIT_FAILURE);
 }
@@ -54,7 +54,7 @@ int is_number(char *str)
 
 	for (i = 0; i < strlen(str); i++)
 	{
-		if (!isdigit(str[i]))
+		if (!isdigit(str[i]) && str[i] != '-')
 			return (0);
 	}
 	return (1);
