@@ -61,4 +61,5 @@ void nop(stack_t **stack, unsigned int line_number);
 void get_the_func(char *arg_1, char *arg_2, int line_numer);
 int check_space(void);
 void _free_1(void);
+int is_number(char *str);
 #endif

@@ -35,16 +35,16 @@ int main(int argc, char *argv[])
 		}
 		arg[0] = strtok(top_2.buffer, " \n\t");
 		i = 0;
-		while (arg[i] != NULL && i < 2)
+		while (arg[i] != NULL && i < 1)
 		{
 			i++;
 			arg[i] = strtok(NULL, " \n");
 		}
-		if (arg[1] != NULL && arg[2] != NULL)
+		if (arg[1] != NULL)
 		{
-			line_number++;
-			continue;
-		}
+			if (is_number(arg[1]) == 0)
+			       arg[1] = NULL;
+		}	
 		get_the_func(arg[0], arg[1], line_number);
 		line_number++;
 	}

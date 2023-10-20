@@ -1,5 +1,4 @@
 #include"monty.h"
-int is_number(char *str);
 /**
  * get_the_func - get the function
  * @arg_1: is the opcode
